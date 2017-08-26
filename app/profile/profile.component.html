@@ -1,0 +1,33 @@
+<div class="container">
+
+    <div class="well title-header">
+        <p>My Profile</p>
+    </div>
+    <nav>
+        <ul>
+        
+        </ul>
+    </nav>
+    <section>
+    
+</section>    
+    <section>
+  <div class="row padding-top-10">
+            <div *ngFor="let prof of profiles">
+
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <div class="thumbnail"
+                         style="border-left: 5px solid #42A948; background-color: #F0F0F0; padding-left: 10px">
+                        <span> Name: {{prof.name}}</span> <br>
+                        <span> Languages : {{prof.languages}}</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
