@@ -47,6 +47,12 @@ var HomeComponent = (function () {
     HomeComponent.prototype.onGoToPolicy = function (id) {
         this.router.navigate(['/policy', id]);
     };
+    HomeComponent.prototype.onGoToSkills = function (id) {
+        this.router.navigate(['/skills', id]);
+    };
+    HomeComponent.prototype.onGoToPublications = function (id) {
+        this.router.navigate(['/publications', id]);
+    };
     HomeComponent = __decorate([
         core_1.Component({
             moduleId: module.id,

@@ -48,4 +48,10 @@ export class HomeComponent implements OnInit{
     onGoToPolicy(id){
         this.router.navigate(['/policy', id]);
     }
+    onGoToSkills(id){
+        this.router.navigate(['/skills', id]);
+    }
+    onGoToPublications(id){
+        this.router.navigate(['/publications', id]);
+    }
 }
