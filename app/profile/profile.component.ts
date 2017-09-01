@@ -1,5 +1,3 @@
-
-
 import {OnInit, Component} from "@angular/core";
 import {ProfileService} from "./profile.service";
 import {Profile} from "./profile.model";
@@ -14,7 +12,7 @@ import {Profile} from "./profile.model";
 export class ProfileComponent implements OnInit  {
 
 
-    profiles:Profile[];
+   profile:Profile; 
 
     // for search
     searchResults:Profile[];
@@ -22,7 +20,6 @@ export class ProfileComponent implements OnInit  {
     autoCompleteSearchResult:Profile[];
 
     searchByTtileList:Profile[];
-
     
     constructor(private service:ProfileService){
     }
@@ -33,7 +30,7 @@ export class ProfileComponent implements OnInit  {
     }
 
     getAllProfile(){
-         this.service.getAllProfile().subscribe(profiles => this.profiles = profiles);
+         this.service.getAllProfile().subscribe(profiles => this.profile = profiles);
     }
 
     search(term:string) {

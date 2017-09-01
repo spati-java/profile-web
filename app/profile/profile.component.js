@@ -19,7 +19,7 @@ var ProfileComponent = (function () {
     };
     ProfileComponent.prototype.getAllProfile = function () {
         var _this = this;
-        this.service.getAllProfile().subscribe(function (profiles) { return _this.profiles = profiles; });
+        this.service.getAllProfile().subscribe(function (profiles) { return _this.profile = profiles; });
     };
     ProfileComponent.prototype.search = function (term) {
         var _this = this;

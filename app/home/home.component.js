@@ -10,42 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
+var profile_service_1 = require("../profile/profile.service");
 var HomeComponent = (function () {
-    function HomeComponent(router) {
+    function HomeComponent(router, service) {
         this.router = router;
+        this.service = service;
     }
     HomeComponent.prototype.ngOnInit = function () {
-        this.webServices = this.getAllWebServices();
+        this.getProfile();
     };
-    HomeComponent.prototype.getAllWebServices = function () {
-        return [{ "id": 1, name: "Schedule Web Service" }, { "id": 2, name: "Project Web Service" }, { "id": 3, name: "Line Item Web Service" }, { "id": 4, name: "Invoice Web Service" }];
-    };
-    HomeComponent.prototype.gotoCreateLineItem = function () {
-        this.router.navigate(['/create', 1]);
-    };
-    HomeComponent.prototype.onGoToWorkTracking = function (id) {
-        this.router.navigate(['/work-tracking', id]);
-    };
-    HomeComponent.prototype.onGotoLineItem = function (id) {
-        this.router.navigate(['/line-items', id]);
-    };
-    HomeComponent.prototype.onGotoInvoice = function (id) {
-        this.router.navigate(['/invoice', id]);
-    };
-    HomeComponent.prototype.onGotoSchedule = function (id) {
-        this.router.navigate(['/schedule', id]);
-    };
-    HomeComponent.prototype.onGotoPayrollDate = function (id) {
-        this.router.navigate(['/payroll-date', id]);
-    };
-    HomeComponent.prototype.onGoToBankAccount = function (id) {
-        this.router.navigate(['/bank-account', id]);
+    HomeComponent.prototype.getProfile = function () {
+        var _this = this;
+        this.service.getProfile().subscribe(function (profile) { return _this.profile = profile; });
     };
     HomeComponent.prototype.onGoToProfile = function (id) {
         this.router.navigate(['/profile', id]);
-    };
-    HomeComponent.prototype.onGoToPolicy = function (id) {
-        this.router.navigate(['/policy', id]);
     };
     HomeComponent.prototype.onGoToSkills = function (id) {
         this.router.navigate(['/skills', id]);
@@ -58,9 +37,10 @@ var HomeComponent = (function () {
             moduleId: module.id,
             templateUrl: 'home.component.html',
             styleUrls: ['home.component.css'],
-            directives: [router_1.ROUTER_DIRECTIVES]
+            directives: [router_1.ROUTER_DIRECTIVES],
+            providers: [profile_service_1.ProfileService]
         }), 
-        __metadata('design:paramtypes', [router_1.Router])
+        __metadata('design:paramtypes', [router_1.Router, profile_service_1.ProfileService])
     ], HomeComponent);
     return HomeComponent;
 }());

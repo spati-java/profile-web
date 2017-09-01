@@ -22,6 +22,9 @@ var ProfileService = (function () {
     ProfileService.prototype.getAllProfile = function () {
         return this.http.get('http://35.166.219.25/').map(function (res) { return res.json(); });
     };
+    ProfileService.prototype.getProfile = function () {
+        return this.http.get('http://localhost:8081').map(function (res) { return res.json(); });
+    };
     ProfileService.prototype.search = function (term) {
         return this.http
             .get("http://localhost:8080/profile/search?query=" + term, this.options)

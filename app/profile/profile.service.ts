@@ -20,6 +20,9 @@ export class ProfileService{
         return this.http.get('http://35.166.219.25/').map((res:Response)=>res.json());
     }
 
+    getProfile(){
+        return this.http.get('http://localhost:8081').map((res:Response)=>res.json());
+    }
     search(term:string) {
         return this.http
             .get(`http://localhost:8080/profile/search?query=${term}`,this.options)
