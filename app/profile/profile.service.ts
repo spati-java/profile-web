@@ -11,7 +11,6 @@ export class ProfileService{
 
     options = new RequestOptions({headers: this.header});
 
-
     constructor(private http:Http){
         
     }
@@ -21,7 +20,7 @@ export class ProfileService{
     }
 
     getProfile(){
-        return this.http.get('http://localhost:8081').map((res:Response)=>res.json());
+        return this.http.get('http://localhost:8081/profile').map((res:Response)=>res.json());
     }
     search(term:string) {
         return this.http

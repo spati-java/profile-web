@@ -1,6 +1,5 @@
 
 import {OnInit, Component} from "@angular/core";
-import {WebService} from "./web-service.model";
 import {Router, ROUTER_DIRECTIVES} from "@angular/router";
 import {Profile} from "../profile/profile.model";
 import {ProfileService } from "../profile/profile.service"
@@ -14,6 +13,7 @@ import {ProfileService } from "../profile/profile.service"
 export class HomeComponent implements OnInit{
 
     profile:Profile;
+    title:'Some Title';
     constructor(private router: Router , private service:ProfileService){}
     ngOnInit() {
      this.getProfile();

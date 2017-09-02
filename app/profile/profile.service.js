@@ -23,7 +23,7 @@ var ProfileService = (function () {
         return this.http.get('http://35.166.219.25/').map(function (res) { return res.json(); });
     };
     ProfileService.prototype.getProfile = function () {
-        return this.http.get('http://localhost:8081').map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:8081/profile').map(function (res) { return res.json(); });
     };
     ProfileService.prototype.search = function (term) {
         return this.http
